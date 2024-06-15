@@ -173,7 +173,7 @@ export default function Home() {
         </div>
         <p className="mt-5 text-end font-medium text-md">Developed by <Link href="https://brainnect.com" className="font-semibold underline" target="_blank">brainnect</Link></p>
       </div>
-      <div className="flex items-center h-screen justify-center max-w-[90%] mx-auto">
+      <div className="flex items-center h-screen justify-center max-w-[90%] mx-auto lg:hidden">
         <h2 className="text-2xl font-semibold text-center">This website is only for desktop</h2>
       </div>
     </div>
