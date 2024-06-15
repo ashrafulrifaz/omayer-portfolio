@@ -2,32 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #FFFAFA;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.home_page {
+  background: url("../assets/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.card {
+  @apply rounded-xl bg-primary hover:rotate-6 transition-all
+}
+
+.card_container {
+  @apply bg-background border-primary border-2 px-6 py-4 rounded-xl transition-all h-full
+}
+
+.card:hover .card_container {
+  @apply -rotate-6
+}
+
+.card:hover button {
+  @apply gap-2.5
+}
+
+.back_btn {
+  @apply border-2 p-2 rounded-xl bg-background border-primary cursor-pointer
+}
+
+.back_btn svg {
+  @apply transition-all
+}
+
+.back_btn:hover svg {
+  @apply rotate-45 scale-110
+}
+
+.service_card {
+  @apply border-2 bg-opacity-60 rounded-xl p-5
+}
+
+.social_icon {
+  @apply rounded-xl transition-all bg-primary hover:rotate-45
+}
+
+.social_container {
+  @apply transition-all p-2 rounded-xl
+}
+
+.social_icon:hover .social_container {
+  @apply -rotate-45 scale-90
 }
