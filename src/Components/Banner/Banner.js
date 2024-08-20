@@ -1,22 +1,48 @@
+"use client"
 import Image from "next/image";
 import Navbar from "../Navbar/Navbar";
 import HiIcon from '@/assets/wave.png'
+import MyImg from '@/assets/banner-image.png'
+import videoImg from '@/assets/video.png'
+import developImg from '@/assets/development.png'
+import AfterEffectsImg from '@/assets/after-effects.png'
+import PremiereProImg from '@/assets/premiere-pro.png'
+import Social from "./Social";
+import { K2D } from "next/font/google";
+import { motion } from "framer-motion"
+
+const k2d = K2D({weight: ['500', '700'], subsets: ["latin"] });
 
 const Banner = () => {
     return (
-        <div className="py-5 banner">
+        <div className="pt-5 banner">
             <div className="max-w-[1200px] mx-auto">
                 <Navbar />
-                <div className="grid grid-cols-2 gap-5 items-center h-full">
+                <motion.div initial={{scale: 0}} animate={{scale: 1}} transition={{duration: 1}} className="grid grid-cols-2 gap-5 items-center h-full">
                     <div className="space-y-5">
                         <div className="flex items-center gap-3">
-                            <span className="text-lg font-medium">HI</span>
-                            <Image src={HiIcon} alt="hi" className="w-6 h-6" />
+                            <span className={`text-xl font-medium ${k2d.className}`}>HI</span>
+                            <Image src={HiIcon} alt="hi" className="hi_icon w-6 h-6" />
                         </div>
-                        <h2 className="font-semibold text-6xl leading-snug">I’m Ehasanul Islam, <br /> A Proffessional Video Editor</h2>
-                        <p className="text-lg ">I’m a Video editor with 1 year of experience and I work remotely from Bangladesh.</p>
+                        <h2 className={`font-medium text-6xl leading-tight ${k2d.className}`}>I am Ehasanul Islam, <br /> A Proffessional Video Editor</h2>
+                        <p className="text-xl font-medium">I’m a video editor with 1 year of experience and I work remotely from Bangladesh.</p>
+                        <div>
+                            <Social />
+                        </div>
                     </div>
-                </div>
+                    <div className="relative">
+                        <div className="absolute w-full h-full -bottom-[40%] -right-[5%] p-4 rounded-full border-[3px] border-[#d117b6] z-0">
+                            <div className="bg-[#d117b6] w-full h-full rounded-full"></div>
+                        </div>
+                        <div className="relative z-10">
+                            <Image src={MyImg} alt="omayer" />
+                        </div>
+                        <Image src={videoImg} alt="omayer" className="banner_icons top-[6%] right-[10%] rotate-[25deg] " />
+                        <Image src={PremiereProImg} alt="omayer" className="banner_icons top-[44%] right-[10%] -rotate-12 " />
+                        <Image src={AfterEffectsImg} alt="omayer" className="banner_icons top-[10%] left-[15%] -rotate-[30deg] " />
+                        <Image src={developImg} alt="omayer" className="banner_icons top-[44%] leftnpmr-[10%] -rotate-12 " />
+                    </div>
+                </motion.div>
             </div>
         </div>
     );

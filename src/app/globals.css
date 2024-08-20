@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +7,7 @@
 body {
   background: #FFFAFA;
   max-width: 100%;
-  font-family: "Manrope", sans-serif;
+  font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
 
@@ -13,14 +15,14 @@ body {
   background: url("../assets/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  overflow: hidden
 }
 
 
 /* HEADER */
 .header,
 .footer {
-  @apply border-2 border-gray-200 p-5 rounded-full w-full bg-white bg-opacity-40
+  @apply border-2 border-gray-200 px-4 py-3 rounded-full w-full bg-white bg-opacity-40
 }
 
 .nav-items {
@@ -28,11 +30,38 @@ body {
 }
 
 .nav-items a {
-  @apply font-medium text-lg
+  @apply font-semibold text-lg hover:text-main
 }
 
 button {
-  @apply py-3 px-7 rounded-full text-black bg-main font-medium capitalize
+  @apply py-2.5 px-6 rounded-full text-black bg-main font-medium capitalize hover:bg-main transition-all
+}
+
+
+/* BANNER */
+
+.social {
+  @apply inline-flex gap-5 border-2 border-gray-300 rounded-2xl px-4 mt-3
+}
+
+.social_icon {
+  @apply w-auto py-3 hover:p-3 hover:scale-110 hover:-translate-y-3 hover:bg-gray-300 rounded-full cursor-pointer transition-all
+}
+
+.social_icon img {
+  @apply w-7 h-7
+}
+
+.banner_icons {
+  @apply absolute w-10 h-10
+}
+
+.banner_icons {
+  animation: bounce 5s infinite;;
+}
+
+.hi_icon {
+  animation: wave 2s infinite;;
 }
 
 
@@ -43,7 +72,11 @@ button {
 }
 
 .app_card img {
-  @apply w-8 h-8
+  @apply w-10 h-10
+}
+
+.app_card span {
+  @apply font-semibold text-xl
 }
 
 .contact {
@@ -53,9 +86,53 @@ button {
 }
 
 
+/* WORK */
+
+iframe {
+  @apply rounded-3xl border-main
+}
+
+.videos {
+  @apply w-full h-52 border-2
+}
+
+.shorts {
+  @apply w-64 h-96 border-2
+}
+
 /* CONTACT */
 
 .contact input,
 .contact textarea {
-  @apply border-[1.5px] bg-white bg-opacity-50 border-[#4A4A4A] border-opacity-20 rounded-2xl py-3 px-4 w-full focus:outline-none
+  @apply border-[1.5px] bg-white bg-opacity-50 border-[#4A4A4A] border-opacity-20 rounded-2xl py-3 px-4 w-full focus:outline-none font-medium text-lg
+}
+
+
+/* ANIMATIONS */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+        scale: 1;
+    }
+    50% {
+        transform: translateY(-20px);
+        scale: 1.2;
+    }
+    100% {
+        transform: translateY(0);
+        scale: 1;
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }

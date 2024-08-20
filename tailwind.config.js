@@ -14,10 +14,6 @@ module.exports = {
       },
       colors: {
         "main": "#FF90EF"
-      },
-      fontFamily: {
-        "main": ["Manrope", "sans-serif"],
-        "k2d": ["K2D", "sans-serif"],
       }
     },
   },
