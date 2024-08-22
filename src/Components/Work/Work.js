@@ -49,17 +49,17 @@ const Work = () => {
     const [currentTab, setCurrentTab] = useState('shorts')
 
     return (
-        <div className="py-10 max-w-[1200px] mx-auto">
-            <motion.h3 initial={{width: 0, opacity: 0}} animate={{width: '100%', opacity: 1}} transition={{duration: 0.5}} className={`text-3xl font-medium text-center ${k2d.className}`}>Some Masterpieces</motion.h3>
-            <motion.p initial={{width: 0, opacity: 0}} animate={{width: '100%', opacity: 1}} transition={{duration: 0.5}}className="text-xl font-medium text-center mt-3">Explore some of my creative works</motion.p>
-            <div className="flex items-center justify-center gap-4 mt-9">
+        <div className="py-4 lg:py-10 max-w-[92%] md:max-w-[1200px] mx-auto">
+            <motion.h3 initial={{width: 0, opacity: 0}} animate={{width: '100%', opacity: 1}} transition={{duration: 0.5}} className={`text-2xl lg:text-3xl font-medium text-center ${k2d.className}`}>Some Masterpieces</motion.h3>
+            <motion.p initial={{width: 0, opacity: 0}} animate={{width: '100%', opacity: 1}} transition={{duration: 0.5}}className="text-base lg:text-xl font-medium text-center mt-1 lg:mt-3">Explore some of my creative works</motion.p>
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-5 lg:mt-9">
                 {
                     tabs.map((tab, idx) => (
-                        <motion.button initial={{scale: 0}} animate={{scale: 1}} transition={{duration: 0.5, delay: 1,}} key={idx} className={`p-1.5 px-4 bg-main font-semibold text-lg ${tab?.name === currentTab ? 'bg-opacity-100' : 'bg-opacity-5'} border-2 border-main border-opacity-40 rounded-xl transition-colors duration-500`} onClick={() => setCurrentTab(tab?.name)}>{tab?.name}</motion.button>
+                        <motion.button initial={{scale: 0}} animate={{scale: 1}} transition={{duration: 0.5, delay: 1,}} key={idx} className={`p-1 lg:p-1.5 px-2 lg:px-4 bg-main font-semibold text-base lg:text-lg ${tab?.name === currentTab ? 'bg-opacity-100' : 'bg-opacity-5'} border-2 border-main border-opacity-40 rounded-xl transition-colors duration-500`} onClick={() => setCurrentTab(tab?.name)}>{tab?.name}</motion.button>
                     ))
                 }
             </div>
-            <div className={`${currentTab === 'shorts' ? 'flex flex-wrap justify-center' : 'grid grid-cols-3'} gap-6 mt-10`}>
+            <div className={`${currentTab === 'shorts' ? 'flex flex-wrap justify-center' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'} gap-3 md:gap-6 mt-6 lg:mt-10`}>
                 {
                     currentTab === 'shorts' ?
                     videos.map((video, idx) => (

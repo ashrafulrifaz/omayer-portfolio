@@ -2,6 +2,7 @@ import About from "@/Components/About/About";
 import Banner from "@/Components/Banner/Banner";
 import Contact from "@/Components/Contact/Contact";
 import Work from "@/Components/Work/Work";
+import './globals.css'
 
 export default function Home() {
   return (
