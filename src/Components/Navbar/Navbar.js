@@ -1,4 +1,5 @@
 "use client"
+import '../../app/globals.css'
 import { K2D } from "next/font/google";
 import { motion } from "framer-motion"
 import BarIcon from '@/assets/bar.png'
