@@ -1,10 +1,10 @@
 import { Manrope } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Omayer - Professional Video Editor",
+  title: "Ehasanul Islam - Professional Video Editor",
   description: "professional Video Editor",
 };
 
